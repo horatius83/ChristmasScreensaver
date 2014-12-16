@@ -172,33 +172,6 @@ static void CloseGL(HWND hWnd, HDC hDC, HGLRC hRC)
 void SetupAnimation(int Width, int Height)
 {
 	greeting.Initialize(width, height, 32);
-	//greeting.ChangeResolution(width,height,32);
-	/*
-	//window resizing stuff
-	glViewport(0, 0, (GLsizei) Width, (GLsizei) Height);
-
-	glMatrixMode(GL_PROJECTION);
-	glLoadIdentity();
-
-	glOrtho(-300, 300, -240, 240, 25, 75);  
-	glMatrixMode(GL_MODELVIEW);
-
-	glLoadIdentity();
-	gluLookAt(0.0, 0.0, 50.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0);
-	//camera xyz, the xyz to look at, and the up vector (+y is up)
-
-	//background
-	glClearColor(0.0, 0.0, 0.0, 0.0); //0.0s is black
-
-
-	glPolygonMode(GL_FRONT_AND_BACK, GL_FILL); 
-	glShadeModel(GL_SMOOTH); 
-
-	//no need to initialize any objects
-	//but this is where I'd do it
-
-	glColor3f(0.1f, 1.0f, 0.3f); //green
-	*/
 }
 
 static GLfloat spin=0;   //a global to keep track of the square's spinning
@@ -206,37 +179,8 @@ static GLfloat spin=0;   //a global to keep track of the square's spinning
 
 void OnTimer(HDC hDC) //increment and display
 {
-	//glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
 	greeting.DrawScene();
-	/*
-	spin = spin + 1; 
-
-	glPushMatrix();
-	glRotatef(spin, 0.0, 0.0, 1.0);
-
-	glPushMatrix();
-
-	glTranslatef(150, 0, 0);
-
-	if(bTumble)
-		glRotatef(spin * -3.0, 0.0, 0.0, 1.0); 
-	else
-		glRotatef(spin * -1.0, 0.0, 0.0, 1.0);  
-
-	//draw the square (rotated to be a diamond)
-
-	float xvals[] = {-30.0, 0.0, 30.0, 0.0};
-	float yvals[] = {0.0, -30.0, 0.0, 30.0};
-
-	glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
-	glBegin(GL_POLYGON);
-	for (int i=0; i < 4; i++)
-		glVertex2f(xvals[i], yvals[i]);
-	glEnd();
-
-	glPopMatrix();
-	*/
+	
 	glFlush();
 	SwapBuffers(hDC);
 	glPopMatrix();

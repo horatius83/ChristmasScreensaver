@@ -64,7 +64,7 @@ namespace Geometry {
 			
 			
 			//CreatePyramidArray(rf, midpoints[1], d, c, b, e);
-		CreatePyramidArray(rf, midpoints[1], e, d, c, b);
+			CreatePyramidArray(rf, midpoints[1], e, d, c, b);
 
 			CreatePyramidArray(lb, midpoints[2], lowerMidpoints[1], points[3], lowerMidpoints[2], bottomPoint);
 			CreatePyramidArray(rb, midpoints[3], lowerMidpoints[2], points[4], lowerMidpoints[3], bottomPoint);
@@ -72,10 +72,10 @@ namespace Geometry {
 
 			//Now create the pyramids and add them to the container
 			container.push_back(Pyramid(tp));
-			//container.push_back(Pyramid(lf));
+			container.push_back(Pyramid(lf));
 			container.push_back(Pyramid(rf));
-			//container.push_back(Pyramid(lb));
-			//container.push_back(Pyramid(rb));
+			container.push_back(Pyramid(lb));
+			container.push_back(Pyramid(rb));
 		}
 
 		int GetPointsSize() const { return 5; }

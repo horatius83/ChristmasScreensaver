@@ -75,7 +75,7 @@ public:
 		std::vector<Geometry::Pyramid> pyramids;
 		pyramids.push_back(pyramid);
 		//std::vector<Rendering::IRenderable*> objs;
-		GeneratePyramid(objs, pyramids, 1);
+		GeneratePyramid(objs, pyramids, 6);
 		
 		//Create display list
 		if(objs.size() > 0) {
